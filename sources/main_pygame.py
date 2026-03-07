@@ -41,14 +41,7 @@ atomes = [{"id" : 1, "nom" : "C", "pos" : (127, 208), "liaisons" : [(2, 2), (3, 
           {"id" : 4, "nom" : "H", "pos" : (134, 157), "liaisons" : [(1, 1)]}]
 
 
-
-GREY = (180, 180, 180)
-DARK_WHITE = (238, 238, 213)
-GREEN = (125, 148, 93)
-BG_GREY = (150, 150, 150)
-WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
-BROWN = (160, 130, 110)
 
 
 SCALE = 100 # Taille de la fenêtre en %, tout doit être proportionnel - peut être modifié à volonté
@@ -58,5 +51,19 @@ WINDOW_HEIGHT = SCALE*6
 
 WINDOW_SIZE = (WINDOW_LENGHT, WINDOW_HEIGHT)
 
+pg.init()
+
 surface = pg.display.set_mode(WINDOW_SIZE)
 pg.display.set_caption("Kovalent")
+
+running = True
+
+while running == True :
+    for event in pg.event.get():
+        if event.type == pg.QUIT:
+            running = False
+    
+    surface.fill(BLACK)
+    pg.display.flip()
+    
+pg.quit()
