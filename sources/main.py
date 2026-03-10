@@ -3,9 +3,9 @@
 
 Bandeau d'informations - tenir à jour !
 
-Version : 1.4
+Version : 1.5
 
-Dernière édition : Victor, 08/03/2025, 19:11
+Dernière édition : Victor, 10/03/2025, 14:06
 
 
 ---------- COMMENTAIRE ----------
@@ -52,6 +52,8 @@ La variable tick augmente de 1 à chaque frame, pour faire des animations
         - Ajout d'un ticker
         - Ajout d'une intro
         - Ajout d'un titre du menu
+    -> Version 1.5
+        - Police de caractère style futuriste
 
 ==================== main.py ====================
 '''
@@ -67,7 +69,7 @@ from screeninfo import get_monitors
 
 # ----- Couleurs, constantes et variables/tableaux/autres -----
 
-fenetre_basique = True
+fenetre_basique = False
 
 tick = 0
 
@@ -132,7 +134,7 @@ pg.font.init()
 def create_text(text : str, size : int, color : tuple = WHITE) -> pg.Surface :
     '''Renvoie une Surface de texte, à blit pour afficher'''
     
-    font = pg.font.Font(pg.font.get_default_font(), size)
+    font = pg.font.Font("data/super_font.otf", size)
     return font.render(text, True, color)
 
 
@@ -157,11 +159,11 @@ def render() -> None :
         elif tick <= 80 :
             surface.fill(BLACK)
             teinte = ((tick-20)/60)*255
-            print_txt("KVTeam", (480, 350), 50, (teinte, teinte, teinte))
-        elif tick >= 140 :
+            print_txt("KVTeam", (450, 350), 50, (teinte, teinte, teinte))
+        elif tick >= 170 :
             surface.fill(BLACK)
-            teinte = (1-((tick-140)/60))*255
-            print_txt("KVTeam", (480, 350), 50, (teinte, teinte, teinte))
+            teinte = (1-((tick-170)/30))*255
+            print_txt("KVTeam", (450, 350), 50, (teinte, teinte, teinte))
     else :
         surface.fill(DARK_GREY)
         main_menu()
