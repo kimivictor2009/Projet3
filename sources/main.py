@@ -3,9 +3,9 @@
 
 Bandeau d'informations - tenir à jour !
 
-Version : 2.0
+Version : 2.01
 
-Dernière édition : Victor, 11/03/2025, 15:21
+Dernière édition : Victor, 11/03/2025, 18:55
 
 
 ---------- COMMENTAIRE ----------
@@ -68,6 +68,7 @@ La variable tick augmente de 1 à chaque frame, pour faire des animations
         - Effet des boutons (changer le menu)
         - Bouton de retour au menu principal
         - Petit effet stylé supplémentaire dans l'intro
+        -> Version 2.01 : Changement des couleurs de boutons
 
 ==================== main.py ====================
 '''
@@ -234,10 +235,10 @@ def main_menu() -> None :
     
     print_txt("KOVALENT", (600, 100), 70, WHITE, True)
     
-    if button((450, 300, 300, 100), "Jouer", BLACK, 60, WHITE, LIGHT_GREY) :
+    if button((450, 300, 300, 100), "Jouer", BLACK, 60, LIGHT_GREY, WHITE) :
         menu = "level select"
     
-    if button((400, 500, 400, 100), "Règles du jeu", BLACK, 50, WHITE, LIGHT_GREY) :
+    if button((400, 500, 400, 100), "Règles du jeu", BLACK, 50, LIGHT_GREY, WHITE) :
         menu = "rules"
 
 
@@ -249,7 +250,7 @@ def rules() -> None :
     
     print_txt("Règles du jeu", (600, 100), 70, WHITE, True)
     
-    if button((50, 650, 300, 100), "Retour", BLACK, 60, WHITE, LIGHT_GREY) :
+    if button((50, 650, 300, 100), "Retour", BLACK, 60, LIGHT_GREY, WHITE) :
         menu = "main"
 
 
@@ -261,7 +262,7 @@ def level_select() -> None :
     
     print_txt("Sélectionnez un niveau", (600, 100), 70, WHITE, True)
     
-    if button((50, 650, 300, 100), "Retour", BLACK, 60, WHITE, LIGHT_GREY) :
+    if button((50, 650, 300, 100), "Retour", BLACK, 60, LIGHT_GREY, WHITE) :
         menu = "main"
 
 
